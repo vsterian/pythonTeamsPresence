@@ -1,0 +1,9 @@
+{
+    "authority": "https://login.microsoftonline.com/1f97ae5f-b765-4494-a8a4-5b0955d6673a",
+    "client_id": "4013e8bf-7904-421c-8c8b-5f32441edff6",
+    "scope": [ "https://graph.microsoft.com/.default" ],
+    
+    "secret": "5xs8Q~kJUuMVGpKmYib5NfMNA_iYqIcObrIOrapw",
+    "endpoint": "https://graph.microsoft.com/v1.0/users",
+    "email": "wildperson@awaildorg.onmicrosoft.com"
+  }
