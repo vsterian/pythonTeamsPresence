@@ -10,6 +10,7 @@ import asyncio
 from msgraph import GraphRequestAdapter
 
 from msgraph.generated.models.subscription import Subscription
+from datetime import datetime, timedelta
 
 
 
@@ -61,17 +62,24 @@ if "access_token" in result:
     
     # Define the subscription payload
     
+    
+expiration_time = datetime.utcnow() + timedelta(minutes=58)
+expiration_time_str = expiration_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    
 async def create_subscription():
 
-        #subscription_start = SubscriptionsRequestBuilder(request_adapter=request_adapter)
+        
         subscription_data = Subscription(
         change_type = "updated",
         notification_url = "https://wildteamspresence1.azurewebsites.net/api/presenceNotification?code=umn1zuc1CkeJutJCf1qoK5J0MdfBxx1obJjTM0zC8s80AzFuSxPtEQ==",
         resource =  f"/communications/presences/{user_id}",
-        expiration_date_time = "2023-09-12T15:50:45.9356913Z",
-        client_state = None,
+        expiration_date_time = "2023-09-13T12:30:45",
+        #client_state = None,
        
 )
+        
+        subscription_data.expirationDateTime = expiration_time_str 
         
         try:
             
